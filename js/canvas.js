@@ -1,6 +1,6 @@
-const canvas = document.querySelector(".canvas-cont")
-canvas.width = window.innerWidth
-canvas.height =window.innerHeight
+const canvas1 = document.querySelector(".canvas1-cont")
+canvas1.width = window.innerWidth
+canvas1.height =window.innerHeight
 let mousedown =false;
 let pencilColor = document.querySelectorAll(".pencil-color")
 let pencilWidthElem = document.querySelector(".pencil-width")
@@ -15,7 +15,7 @@ let track = 0; // represent
 
 
 //Api
-let tool = canvas.getContext('2d')
+let tool = canvas1.getContext('2d')
 let penColor = 'red'
 let eraserColor = 'white'
 let penWidth = pencilWidthElem.value
@@ -68,7 +68,7 @@ eraserWidthElement.addEventListener('change',(e)=>{
 
 //drawing the things
 //MOUSE DOWN -> START NEW PATH ,MOUSE MOVE ->PATH FILL (GRAPHICS)
-canvas.addEventListener('mousedown',(e)=>{
+canvas1.addEventListener('mousedown',(e)=>{
     mousedown=true
     beginPath({
         x:e.clientX,
@@ -78,7 +78,7 @@ canvas.addEventListener('mousedown',(e)=>{
    
 
 })
-canvas.addEventListener("mousemove",(e)=>{
+canvas1.addEventListener("mousemove",(e)=>{
       if(mousedown){
          drawStroke({
             x:e.clientX,
@@ -90,9 +90,9 @@ canvas.addEventListener("mousemove",(e)=>{
       }
 })
 
-canvas.addEventListener("mouseup" ,(e)=>{
+canvas1.addEventListener("mouseup" ,(e)=>{
     mousedown=false
-    let url = canvas.toDataURL();
+    let url = canvas1.toDataURL();
     undoRedoTracker.push(url);
     track = undoRedoTracker.length - 1
 })
@@ -105,7 +105,7 @@ undo.addEventListener('click',(e)=>{
         trackValue :track,
         undoRedoTracker
     }
-    undoRedoCanvas(trackObj)
+    undoRedocanvas1(trackObj)
 
 })
 redo.addEventListener('click',(e)=>{
@@ -116,18 +116,18 @@ redo.addEventListener('click',(e)=>{
         trackValue :track,
         undoRedoTracker
     }
-    undoRedoCanvas(trackObj)
+    undoRedocanvas1(trackObj)
     
 })
 
-function undoRedoCanvas(trackObj){
+function undoRedocanvas1(trackObj){
     track = trackObj.trackValue;
     undoRedoTracker = trackObj.undoRedoTracker
 
     let img = new Image();
     img.src = undoRedoTracker[track]
     img.onload = (e)=>{
-        tool.drawImage(img,0,0,canvas.width,canvas.height)
+        tool.drawImage(img,0,0,canvas1.width,canvas1.height)
     }
 }
 
@@ -145,7 +145,7 @@ function drawStroke(strokeObj){
 
 
 download.addEventListener('click',(e)=>{ 
-    let url = canvas.toDataURL()
+    let url = canvas1.toDataURL()
 
     let a = document.createElement("a");
     a.href= url;
