@@ -1,4 +1,4 @@
-let canvas = document.querySelector('canvas')
+let canvas = document.querySelector('.canvas-cont')
 canvas.width = window.innerWidth
 canvas.height =window.innerHeight
 let mousedown =false;
