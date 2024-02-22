@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+    <link rel="stylesheet" href="./style.css">
+    <title>OpenBoard Clone</title>
+</head>
+<body>
+    <div class="options-cont">
+        <i class="fa-solid fa-bars"></i>
+    </div>
+    <div class="tools-cont scale-tools">
+        <img src="Icons/Pencil.svg" class="pencil">
+        <img src="Icons/Eraser.svg" class="eraser">
+        <img src="Icons/Download.svg" class="download">
+        <img src="Icons/Upload.svg" class="upload">
+        <img src="Icons/StickyNote.svg" class="stickynote">
+        <img src="Icons/Redo.svg" class="redo">
+        <img src="Icons/Undo.svg" class="undo">
+    </div>
+
+    <div class="pencil-tool-cont show-or-not-cont">  
+        <div class="pencil-width-cont">
+            <input type="range" min="2" max="10" value="3" class="pencil-width">
+        </div>
+        <div class="pencil-color-cont">
+            <div class="black pencil-color"></div>
+            <div class="red pencil-color"></div>
+            <div class="blue pencil-color"></div>
+
+
+        </div>
+    </div>
+    <div class="eraser-tool-cont show-or-not-cont">
+        <div class="pencil-width-cont">
+            <input type="range" min="5" max="30" value="6" class="eraser-width">
+        </div>
+        <!-- <div class="pencil-color-cont">
+            <div class="black pencil-color"></div>
+            <div class="red pencil-color"></div>
+            <div class="blue pencil-color"></div>
+
+
+        </div> -->
+    </div>
+
+    <!-- <div class="sticky-cont">
+        <div class="header-cont">
+            <div class="minimize"><i class="fa-solid fa-minimize fa-shake fa-l" style="color: #FFD43B;"></i></div>
+            <div class="removal"><i class="fa-solid fa-xmark fa-flip fa-xl" style="color: #FFD43B;"></i></div>
+        </div>
+        <div class="note-cont">
+            <textarea ></textarea>
+        </div>
+    </div> -->
+    <canvas></canvas>
+    <script src="js/tools.js"></script>
+    <script src="js/canvas.js"></script>
+</body>
+</html>
