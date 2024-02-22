@@ -14,8 +14,8 @@ let sticky = false;
 resetTools();
 
 //true ->tools show , false --> hide tools
-optionsCount.addEventListener("click", (e) => {
-  console.log(e);
+optionsCount.addEventListener("click", (e1) => {
+  console.log(e1);
   console.log(optionsCount.children);
   optionsFlag = !optionsFlag;
   if (optionsFlag) {
@@ -25,7 +25,7 @@ optionsCount.addEventListener("click", (e) => {
   }
 });
 
-pencil.addEventListener("click", (e) => {
+pencil.addEventListener("click", (e2) => {
   pencilFlag = !pencilFlag;
   if (pencilFlag) {
     pencilToolCont.style.display = "block";
@@ -34,7 +34,7 @@ pencil.addEventListener("click", (e) => {
   }
 });
 
-eraser.addEventListener("click", (e) => {
+eraser.addEventListener("click", (e3) => {
   eraserFlag = !eraserFlag;
   if (eraserFlag) {
     eraserToolCont.style.display = "flex";
@@ -43,11 +43,11 @@ eraser.addEventListener("click", (e) => {
   }
 });
 
-upload.addEventListener("click",(e)=>{
+upload.addEventListener("click",(e4)=>{
     let input = document.createElement("input");
     input.setAttribute("type","file");
     input.click()
-    input.addEventListener('change' , (e)=>{
+    input.addEventListener('change' , (e5)=>{
       const file=input.files[0]
       if(file){
           let reader = new FileReader();
@@ -80,7 +80,7 @@ upload.addEventListener("click",(e)=>{
 
 })
 
-stickyToolCont.addEventListener("click", (e) => {
+stickyToolCont.addEventListener("click", (e6) => {
   let template = `
   <div class="header-cont">
            <div class="drag">
@@ -115,8 +115,8 @@ function createSticky(stickyTempateHtml){
     })
 
     // adding event listners
-    minimize.addEventListener('click',(e)=>{
-        console.log(e)
+    minimize.addEventListener('click',(e7)=>{
+        console.log(e7)
         let noteContainer = stickyContainer.querySelector(".note-cont")
         console.log(noteContainer)
         let display = getComputedStyle(noteContainer).getPropertyValue("display")
@@ -129,8 +129,8 @@ function createSticky(stickyTempateHtml){
 
         }
     })
-    removal.addEventListener("click" , (e)=>{
-        console.log(e)
+    removal.addEventListener("click" , (e8)=>{
+        console.log(e8)
         stickyContainer.remove()
     })
 
@@ -176,11 +176,11 @@ function resetTools() {
 
 
 function noteActions(minimize,removal,stickyContainer){
-    removal.addEventListener("click",(e)=>{
+    removal.addEventListener("click",(e9)=>{
         console.log(removal)
         removal.remove()
     })
-    minimize.addEventListener("click",(e)=>{
+    minimize.addEventListener("click",(e11)=>{
         let noteContainer = stickyContainer.querySelector(".note-cont")
         let display =getComputedStyle(noteContainer).getPropertyValue("display")
         if(display==="none") noteContainer.style.display = "block"
